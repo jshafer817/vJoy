@@ -1,6 +1,9 @@
 # vJoy
 Virtual Joystick
 
+Note 04/16/20: If you are wanting a newer version I just signed a version that has newer force feedback stuff.
+https://github.com/njz3/vJoy/
+
 For much more go to vJoy web site: http://vjoystick.sourceforge.net
 
 To build the project:
