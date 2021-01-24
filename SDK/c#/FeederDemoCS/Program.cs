@@ -9,13 +9,14 @@
 //
 // Functionality:
 //	The program starts with creating one joystick object. 
-//	Then it petches the device id from the command-line and makes sure that it is within range
-//	After testing that the driver is enabled it gets information about the driver
-//	Gets information about the specified virtual device
+//	Then it fetches the device id from the command-line and makes sure that it is within range.
+//	After testing that the driver is enabled, it gets information about the driver.
+//	Afterwards, it gets information about the specified virtual device.
+//
 //	This feeder uses only a few axes. It checks their existence and 
 //	checks the number of buttons and POV Hat switches.
-//	Then the feeder acquires the virtual device
-//	Here starts and endless loop that feedes data into the virtual device
+//	Then the feeder acquires the virtual device.
+//	Here starts and endless loop that feeds data into the virtual device
 //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 #define ROBUST
@@ -90,7 +91,7 @@ namespace FeederDemoCS
             bool AxisZ = joystick.GetVJDAxisExist(id, HID_USAGES.HID_USAGE_Z);
             bool AxisRX = joystick.GetVJDAxisExist(id, HID_USAGES.HID_USAGE_RX);
             bool AxisRZ = joystick.GetVJDAxisExist(id, HID_USAGES.HID_USAGE_RZ);
-            // Get the number of buttons and POV Hat switchessupported by this vJoy device
+            // Get the number of buttons and POV Hat switches supported by this vJoy device
             int nButtons = joystick.GetVJDButtonNumber(id);
             int ContPovNumber = joystick.GetVJDContPovNumber(id);
             int DiscPovNumber = joystick.GetVJDDiscPovNumber(id);
@@ -257,7 +258,7 @@ namespace FeederDemoCS
 				iReport.bHats = 0xFFFFFFFF; // Neutral state
 		};
 
-        /*** Feed the driver with the position packet - is fails then wait for input then try to re-acquire device ***/
+        /*** Feed the driver with the position packet - if this fails then wait for input then try to re-acquire device ***/
         if (!joystick.UpdateVJD(id, ref iReport))
         {
             Console.WriteLine("Feeding vJoy device number {0} failed - try to enable device then press enter\n", id);
