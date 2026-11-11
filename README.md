@@ -28,3 +28,18 @@ Justin's notes:
 9. Install Innosetup 5
 10. Place the DigiCert Utility on the desktop.
 11. Copy the cfg_support_v1.lib file from C:\Program Files (x86)\Windows Kits\10\Lib\10.0.14393.0\km\x86 and x64 to C:\Program Files (x86)\Windows Kits\10\Lib\10.0.10586.0\km\x86 and x64
+
+# What vJoy does
+
+vJoy reates a virtual joystick that can be controlled by code. Various applications read a real joystick (or for example keyboard input), and send that output to the vJoy virtual stick.  It can only create virtual DirectInput sticks (including many flight sticks etc), not XInput (Xbox) controllers.
+
+A common use scenario is for application writers who want to emulate joystick behaviour or want a PPJoy replacement.
+
+## Features
+
+- Virtual Device and device driver 32/64 bit
+- Driver is signed
+- Configurable:
+  - Up to 8 axes
+  - Up to 128 buttons and optional 4 POV Hat Switch
+- Unified x86+x64 installer
